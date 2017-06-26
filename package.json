@@ -2,7 +2,7 @@
   "name": "neutrino-preset-library",
   "description": "Neutrino preset for building libraries.",
   "author": "Jarid Margolin <jaridmargolin@gmail.com>",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "keywords": [
     "neutrino",
