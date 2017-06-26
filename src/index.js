@@ -6,6 +6,7 @@
 
 // core
 const { join, dirname } = require('path')
+const { exec } = require('child_process')
 
 // 3rd party
 const merge = require('deepmerge')
@@ -120,6 +121,16 @@ module.exports = (neutrino, _options = {}) => {
 
     opn(`file://${reportDir}/index.html`, { wait: false })
       .then(__ => resolve(''), reject)
+  }))
+
+  neutrino.register('publish-cov', () => Future((reject, resolve) => {
+    const coverallsPath = require.resolve('coveralls/bin/coveralls')
+    const coveragePath = join(process.cwd(), '.coverage', 'report-lcov',
+      'lcov.info')
+
+    exec(`cat ${coveragePath} | ${coverallsPath}`, (err, stdout, stderr) => (
+      err ? reject(stderr) : resolve('')
+    ))
   }))
 
   if (process.env.NODE_ENV === 'development') {
