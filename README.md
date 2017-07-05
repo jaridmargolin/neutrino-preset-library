@@ -1,3 +1,7 @@
+Moved to: [neutrino-contrib/neutrino-preset-library](https://github.com/jaridmargolin/neutrino-contrib/tree/master/packages/nneutrino-preset-library)
+
+---
+
 # Neutrino Library Preset
 [![NPM version][npm-image]][npm-url] [![NPM downloads][npm-downloads]][npm-url]
 
